@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>AAC Board Home</title>
+  <style>
+    body { 
+      display: flex; 
+      flex-direction: column; 
+      align-items: center; 
+      justify-content: center; 
+      height: 100vh; 
+      font-family: Arial; 
+      background-color: #f7f7f7;
+    }
+    h1 { margin-bottom: 40px; }
+    button {
+      width: 200px; 
+      height: 100px; 
+      margin: 10px; 
+      font-size: 24px; 
+      background-color: #4CAF50; 
+      color: white; 
+      border: none; 
+      border-radius: 10px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <h1>Choose a Board</h1>
+  <button onclick="location.href='board1.html'">Basic Needs</button>
+  <button onclick="location.href='board2.html'">Emotions</button>
+  <button onclick="location.href='board3.html'">Food & Drink</button>
+</body>
+</html>
