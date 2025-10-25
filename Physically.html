@@ -80,19 +80,20 @@
 }
 .keyboard-btn {
   position: fixed;
-  bottom: 20px;          /* distance from bottom of screen */
+  bottom: 2px;          /* distance from bottom of screen */
   left: 50%;
   transform: translateX(-50%); /* center horizontally */
   background-color: #333;
   color: white;
-  padding: 8px 20px;
-  font-size: 16px;
+  padding: 8px 40px;
+  width: 200px;          /* set button width */
+  height: 100px;         /* set button height */
+  font-size: 20px;      /* smaller text */
   border: none;
   border-radius: 6px;
   cursor: pointer;
   z-index: 1000;         /* make sure it’s above other content */
 }
-
 .keyboard-btn:hover {
   background-color: #555;
 }
@@ -145,6 +146,7 @@
 </body>
 
 </html>
+
 
 
 
