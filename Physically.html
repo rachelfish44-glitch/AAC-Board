@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>How I Feel</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f7f7f7;
+      font-family: Arial;
+      overflow: hidden;
+    }
+    .scroll-area {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-content: flex-start;
+      width: 90vw;
+      max-height: 80vh;
+      overflow-y: auto;
+      padding: 10px;
+    }
+    button {
+      width: 150px;
+      height: 150px;
+      margin: 10px;
+      font-size: 20px;
+      background-size: cover;
+      background-position: center;
+      color: blue;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      }
+	.back {
+      position: fixed;
+      top: 2px;
+      left: 20px;
+      background-color: #333;
+      color: white;
+      width: 100px;          /* set button width */
+      height: 100px;         /* set button height */
+      font-size: 20px;      /* smaller text */
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+  </style>
+</head>
+<body>
+  <button class="back" onclick="location.href='index.html'">← Home</button>
+
+  <div class="scroll-area">
+    <button onclick="speak('Can’t breathe')" style="background-image:url('cant_breathe.png');">Can’t Breathe</button>
+    <button onclick="speak('Worse')" style="background-image:url('worse.png');">Worse</button>
+    <button onclick="speak('Pain')" style="background-image:url('pain.png');">Pain</button>
+    <button onclick="speak('Hot')" style="background-image:url('hot.png');">Hot</button>
+    <button onclick="speak('Cold')" style="background-image:url('cold.png');">Cold</button>
+    <button onclick="speak('Sleepy')" style="background-image:url('sleepy.png');">Sleepy</button>
+    <button onclick="speak('Better')" style="background-image:url('better.png');">Better</button>
+    <button onclick="speak('Dizzy')" style="background-image:url('dizzy.png');">Dizzy</button>
+  </div>
+
+  <script>
+    function speak(text) {
+      const msg = new SpeechSynthesisUtterance(text);
+      window.speechSynthesis.speak(msg);
+    }
+  </script>
+</body>
+</html>

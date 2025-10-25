@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Keyboard</title>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f7f7f7;
+      font-family: Arial;
+    }
+
+    .back {
+      position: fixed;
+      top: 15px;
+      left: 15px;
+      background-color: #333;
+      color: white;
+      padding: 5px 10px;
+      font-size: 14px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    #output {
+      width: 90%;
+      height: 60px;
+      font-size: 24px;
+      padding: 10px;
+      margin-top: 40px;
+      border-radius: 10px;
+      border: 2px solid #ccc;
+      text-align: center;
+    }
+
+    .keyboard {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 20px;
+    }
+
+    .row {
+      display: flex;
+      justify-content: center;
+      margin: 5px;
+    }
+
+    button.key {
+      width: 60px;
+      height: 60px;
+      margin: 3px;
+      font-size: 20px;
+      border: none;
+      border-radius: 10px;
+      background-color: #4caf50;
+      color: white;
+      cursor: pointer;
+    }
+
+    button.key:hover {
+      background-color: #45a049;
+    }
+
+    .control-buttons {
+      margin-top: 15px;
+    }
+
+    .control-buttons button {
+      font-size: 18px;
+      padding: 10px 20px;
+      margin: 5px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .speak {
+      background-color: #2196f3;
+      color: white;
+    }
+
+    .clear {
+      background-color: #f44336;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <button class="back" onclick="location.href='index.html'">← Home</button>
+
+  <input type="text" id="output" readonly placeholder="Type here...">
+
+  <div class="keyboard">
+    <div class="row">
+      <button class="key">Q</button><button class="key">W</button><button class="key">E</button>
+      <button class="key">R</button><button class="key">T</button><button class="key">Y</button>
+      <button class="key">U</button><button class="key">I</button><button class="key">O</button><button class="key">P</button>
+    </div>
+    <div class="row">
+      <button class="key">A</button><button class="key">S</button><button class="key">D</button>
+      <button class="key">F</button><button class="key">G</button><button class="key">H</button>
+      <button class="key">J</button><button class="key">K</button><button class="key">L</button>
+    </div>
+    <div class="row">
+      <button class="key">Z</button><button class="key">X</button><button class="key">C</button>
+      <button class="key">V</button><button class="key">B</button><button class="key">N</button><button class="key">M</button>
+    </div>
+    <div class="row">
+      <button class="key" style="width: 300px;">SPACE</button>
+      <button class="key" id="backspace">⌫</button>
+    </div>
+  </div>
+
+  <div class="control-buttons">
+    <button class="speak" onclick="speak()">Speak</button>
+    <button class="clear" onclick="clearText()">Clear</button>
+  </div>
+
+  <script>
+    const output = document.getElementById('output');
+    const keys = document.querySelectorAll('.key');
+
+    keys.forEach(key => {
+      key.addEventListener('click', () => {
+        if (key.textContent === 'SPACE') {
+          output.value += ' ';
+        } else if (key.id === 'backspace') {
+          output.value = output.value.slice(0, -1);
+        } else {
+          output.value += key.textContent;
+        }
+      });
+    });
+
+    function speak() {
+      const msg = new SpeechSynthesisUtterance(output.value);
+      window.speechSynthesis.speak(msg);
+    }
+
+    function clearText() {
+      output.value = '';
+    }
+  </script>
+</body>
+</html>
