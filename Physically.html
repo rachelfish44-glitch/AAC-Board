@@ -47,21 +47,75 @@
       border: none;
       border-radius: 6px;
       cursor: pointer;
+	}
+.aac-button {
+  width: 150px;
+  height: 150px;
+  margin: 10px;
+  font-size: 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; /* text goes to bottom */
+  align-items: center;
+  border: none;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #f1f1f1;
+  cursor: pointer;
+}
+
+.aac-button img {
+  width: 100%;
+  height: 80%;
+  object-fit: cover;
+}
+
+.aac-button span {
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  width: 100%;
+  text-align: center;
+  padding: 4px 0;
+  font-size: 20px;
+}
   </style>
 </head>
 <body>
   <button class="back" onclick="location.href='index.html'">← Home</button>
-
-  <div class="scroll-area">
-    <button onclick="speak('Can’t breathe')" style="background-image:url('cant_breathe.png');">Can’t Breathe</button>
-    <button onclick="speak('Worse')" style="background-image:url('worse.png');">Worse</button>
-    <button onclick="speak('Pain')" style="background-image:url('pain.png');">Pain</button>
-    <button onclick="speak('Hot')" style="background-image:url('hot.png');">Hot</button>
-    <button onclick="speak('Cold')" style="background-image:url('cold.png');">Cold</button>
-    <button onclick="speak('Sleepy')" style="background-image:url('sleepy.png');">Sleepy</button>
-    <button onclick="speak('Better')" style="background-image:url('better.png');">Better</button>
-    <button onclick="speak('Dizzy')" style="background-image:url('dizzy.png');">Dizzy</button>
-  </div>
+<div class="scroll-area">
+  <button class="aac-button" onclick="speak('Can’t breathe')">
+    <img src="cant_breathe.png" alt="Can't Breathe">
+    <span>Can’t Breathe</span>
+  </button>
+  <button class="aac-button" onclick="speak('Worse')">
+    <img src="worse.png" alt="Worse">
+    <span>Worse</span>
+  </button>
+  <button class="aac-button" onclick="speak('Pain')">
+    <img src="pain.png" alt="Pain">
+    <span>Pain</span>
+  </button>
+  <button class="aac-button" onclick="speak('Hot')">
+    <img src="cartoon-fire.png" alt="Hot">
+    <span>Hot</span>
+  </button>
+  <button class="aac-button" onclick="speak('Cold')">
+    <img src="cold.png" alt="Cold">
+    <span>Cold</span>
+  </button>
+  <button class="aac-button" onclick="speak('Sleepy')">
+    <img src="sleepy.png" alt="Sleepy">
+    <span>Sleepy</span>
+  </button>
+  <button class="aac-button" onclick="speak('Better')">
+    <img src="better.png" alt="Better">
+    <span>Better</span>
+  </button>
+  <button class="aac-button" onclick="speak('Dizzy')">
+    <img src="dizzy.png" alt="Dizzy">
+    <span>Dizzy</span>
+  </button>
+</div>
 
   <script>
     function speak(text) {
@@ -70,4 +124,5 @@
     }
   </script>
 </body>
+
 </html>
