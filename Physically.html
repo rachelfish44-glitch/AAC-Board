@@ -78,6 +78,24 @@
   padding: 4px 0;
   font-size: 20px;
 }
+.keyboard-btn {
+  position: fixed;
+  bottom: 20px;          /* distance from bottom of screen */
+  left: 50%;
+  transform: translateX(-50%); /* center horizontally */
+  background-color: #333;
+  color: white;
+  padding: 8px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  z-index: 1000;         /* make sure it’s above other content */
+}
+
+.keyboard-btn:hover {
+  background-color: #555;
+}
   </style>
 </head>
 <body>
@@ -115,6 +133,7 @@
     <img src="dizzy.png" alt="Dizzy">
     <span>Dizzy</span>
   </button>
+	<button class="keyboard-btn" onclick="location.href='board_keyboard.html'">Keyboard</button>
 </div>
 
   <script>
@@ -126,3 +145,4 @@
 </body>
 
 </html>
+
