@@ -1,6 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AAC Board Home</title>
   <style>
     body { 
@@ -9,23 +11,48 @@
       align-items: center; 
       justify-content: center; 
       height: 100vh; 
-      font-family: Arial; 
+      margin: 0;
+      font-family: Arial, sans-serif; 
       background-color: #f7f7f7;
+      text-align: center;
     }
-    h1 { margin-bottom: 40px; }
+
+    h1 {
+      margin-bottom: 40px;
+      font-size: 5vw; /* scales on mobile */
+      max-font-size: 36px;
+    }
+
     button {
-      width: 200px; 
-      height: 100px; 
-      margin: 10px; 
-      font-size: 24px; 
-      background-color: #4CAF50; 
-      color: white; 
-      border: none; 
+      width: 60vw; /* flexible width */
+      max-width: 300px; /* don’t get too wide */
+      height: 15vw; /* scales height */
+      max-height: 100px;
+      margin: 10px;
+      font-size: 4vw; /* text scales with screen */
+      max-font-size: 24px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
       border-radius: 10px;
       cursor: pointer;
+      transition: background-color 0.2s ease;
     }
+
     button:hover {
       background-color: #45a049;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 6vw;
+      }
+
+      button {
+        width: 80vw;
+        height: 18vw;
+        font-size: 5vw;
+      }
     }
   </style>
 </head>
@@ -35,3 +62,4 @@
   <button onclick="location.href='board_2.html'">What I Want/Need</button>
   <button onclick="location.href='board_3.html'">Who I Want/Need</button>
 </body>
+</html>
