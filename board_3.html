@@ -1,39 +1,95 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Who I Want</title>
   <style>
-    body { display: flex; flex-wrap: wrap; justify-content: center; margin-top: 50px; }
+    body { 
+      display: flex; 
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 100vh;
+      margin: 0;
+      padding-top: 100px;
+      font-family: Arial, sans-serif;
+      background-color: #f7f7f7;
+      text-align: center;
+    }
+
+    h1 {
+      position: absolute;
+      top: 15px;
+      width: 100%;
+      text-align: center;
+      font-size: clamp(20px, 5vw, 36px);
+    }
+
+    .button-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      width: 100%;
+      max-width: 500px;
+      margin-top: 20px;
+    }
+
     button { 
-      width: 150px; height: 150px; 
-      margin: 10px; 
-      font-size: 24px;
+      width: clamp(120px, 30vw, 180px); 
+      height: clamp(120px, 30vw, 180px);
+      font-size: clamp(16px, 3vw, 22px);
       background-size: cover;
+      background-position: center;
       background-color: #4CAF50; 
       color: white;
       border: none;
       border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
     }
-	.back {
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    .back {
       position: fixed;
-      top: 2px;
-      left: 20px;
+      top: 15px;
+      left: 15px;
       background-color: #333;
       color: white;
-      width: 100px;          /* set button width */
-      height: 100px;         /* set button height */
-      font-size: 20px;      /* smaller text */
+      width: clamp(60px, 15vw, 100px);
+      height: clamp(40px, 10vw, 60px);
+      font-size: clamp(14px, 2vw, 18px);
       border: none;
       border-radius: 6px;
       cursor: pointer;
-	}
+      z-index: 10;
+    }
+
+    @media (max-width: 600px) {
+      .button-container {
+        gap: 10px;
+        margin-top: 10px;
+      }
+      button {
+        width: 40vw;
+        height: 40vw;
+        font-size: 5vw;
+      }
+    }
   </style>
 </head>
 <body>
   <button class="back" onclick="location.href='index.html'">← Home</button>
+  <h1>Who I Want...</h1>
 
-  <button onclick="location.href='Med_Team.html'" style="background-image:url('https://...');">Medical</button>
-  <button onclick="location.href='Support.html'" style="background-image:url('https://...');">Support</button>
+  <div class="button-container">
+    <button onclick="location.href='Med_Team.html'" style="background-image:url('https://...');">Medical</button>
+    <button onclick="location.href='Support.html'" style="background-image:url('https://...');">Support</button>
+  </div>
 
   <script>
     function speak(text) {
@@ -42,8 +98,8 @@
     }
   </script>
 </body>
-
 </html>
+
 
 
 
