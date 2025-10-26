@@ -7,12 +7,12 @@
   <style>
     body { 
       display: flex; 
-      flex-wrap: wrap; 
-      justify-content: center; 
+      flex-direction: column;
       align-items: center;
+      justify-content: flex-start;
       min-height: 100vh;
       margin: 0;
-      padding-top: 80px;
+      padding-top: 100px;
       font-family: Arial, sans-serif;
       background-color: #f7f7f7;
       text-align: center;
@@ -20,16 +20,25 @@
 
     h1 {
       position: absolute;
-      top: 10px;
+      top: 15px;
       width: 100%;
       text-align: center;
       font-size: clamp(20px, 5vw, 36px);
     }
 
+    .button-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      width: 100%;
+      max-width: 600px;
+      margin-top: 30px;
+    }
+
     button { 
       width: clamp(120px, 25vw, 200px); 
       height: clamp(120px, 25vw, 200px);
-      margin: 12px; 
       font-size: clamp(16px, 3vw, 24px);
       background-color: #4CAF50; 
       color: white;
@@ -59,6 +68,10 @@
     }
 
     @media (max-width: 600px) {
+      .button-container {
+        gap: 10px;
+        margin-top: 10px;
+      }
       button {
         width: 40vw;
         height: 40vw;
@@ -71,9 +84,11 @@
   <button class="back" onclick="location.href='index.html'">← Home</button>
   <h1>How I Feel...</h1>
 
-  <button onclick="location.href='Physically.html'">Physically</button>
-  <button onclick="location.href='Emotionally.html'">Emotionally</button>
-  <button onclick="location.href='Mentally.html'">Mentally</button>
+  <div class="button-container">
+    <button onclick="location.href='Physically.html'">Physically</button>
+    <button onclick="location.href='Emotionally.html'">Emotionally</button>
+    <button onclick="location.href='Mentally.html'">Mentally</button>
+  </div>
 
   <script>
     function speak(text) {
@@ -83,6 +98,7 @@
   </script>
 </body>
 </html>
+
 
 
 
