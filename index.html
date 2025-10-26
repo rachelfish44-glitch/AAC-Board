@@ -19,18 +19,14 @@
 
     h1 {
       margin-bottom: 40px;
-      font-size: 5vw; /* scales on mobile */
-      max-font-size: 36px;
+      font-size: clamp(20px, 4vw, 32px);
     }
 
     button {
-      width: 60vw; /* flexible width */
-      max-width: 300px; /* don’t get too wide */
-      height: 15vw; /* scales height */
-      max-height: 100px;
+      width: clamp(180px, 40vw, 250px);
+      height: clamp(70px, 12vw, 90px);
       margin: 10px;
-      font-size: 4vw; /* text scales with screen */
-      max-font-size: 24px;
+      font-size: clamp(16px, 2.5vw, 22px);
       background-color: #4CAF50;
       color: white;
       border: none;
@@ -44,10 +40,6 @@
     }
 
     @media (max-width: 600px) {
-      h1 {
-        font-size: 6vw;
-      }
-
       button {
         width: 80vw;
         height: 18vw;
@@ -63,3 +55,4 @@
   <button onclick="location.href='board_3.html'">Who I Want/Need</button>
 </body>
 </html>
+
