@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cleaning</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f7f7f7;
+      font-family: Arial;
+      overflow: hidden;
+    }
+    .scroll-area {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-content: flex-start;
+      width: 90vw;
+      max-height: 80vh;
+      overflow-y: auto;
+      padding: 10px;
+    }
+    button {
+      width: 150px;
+      height: 150px;
+      margin: 10px;
+      font-size: 20px;
+      background-size: cover;
+      background-position: center;
+      color: blue;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      }
+	.back {
+      position: fixed;
+      top: 2px;
+      left: 20px;
+      background-color: #333;
+      color: white;
+      width: 100px;          /* set button width */
+      height: 100px;         /* set button height */
+      font-size: 20px;      /* smaller text */
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+	}
+.aac-button {
+  width: 150px;
+  height: 150px;
+  margin: 10px;
+  font-size: 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; /* text goes to bottom */
+  align-items: center;
+  border: none;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #f1f1f1;
+  cursor: pointer;
+}
+
+.aac-button img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.aac-button span {
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  width: 100%;
+  text-align: center;
+  padding: 4px 0;
+  font-size: 20px;
+}
+.keyboard-btn {
+  position: fixed;
+  bottom: 2px;          /* distance from bottom of screen */
+  left: 50%;
+  transform: translateX(-50%); /* center horizontally */
+  background-color: #333;
+  color: white;
+  padding: 8px 40px;
+  width: 200px;          /* set button width */
+  height: 100px;         /* set button height */
+  font-size: 20px;      /* smaller text */
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  z-index: 1000;         /* make sure it’s above other content */
+}
+.keyboard-btn:hover {
+  background-color: #555;
+}
+  </style>
+</head>
+<body>
+  <button class="back" onclick="location.href='board_2.html'">← Back</button>
+<div class="scroll-area">
+  <button class="aac-button" onclick="speak('Hair')">
+    <img src="cant_breathe.png" alt="Hair">
+    <span>Hair</span>
+  </button>
+  <button class="aac-button" onclick="speak('Nose')">
+    <img src="worse.png" alt="Nose">
+    <span>Nose</span>
+  </button>
+  <button class="aac-button" onclick="speak('Teeth')">
+    <img src="pain.png" alt="Teeth">
+    <span>Teeth</span>
+  </button>
+  <button class="aac-button" onclick="speak('Hands')">
+    <img src="cartoon-fire.png" alt="Hands">
+    <span>Hands</span>
+  </button>
+  <button class="aac-button" onclick="speak('Bath')">
+    <img src="cold.png" alt="Bath">
+    <span>Bath</span>
+  </button>
+  <button class="aac-button" onclick="speak('Suction')">
+    <img src="sleepy.png" alt="Suction">
+    <span>Suction</span>
+  </button>
+   	<button class="keyboard-btn" onclick="location.href='Keyboard.html'">Keyboard</button>
+</div>
+
+  <script>
+    function speak(text) {
+      const msg = new SpeechSynthesisUtterance(text);
+      window.speechSynthesis.speak(msg);
+    }
+  </script>
+</body>
+
+</html>
