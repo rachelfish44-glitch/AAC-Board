@@ -95,3 +95,53 @@
       font-size: 20px;
       border: none;
       border-radius: 6px;
+      cursor: pointer;
+      z-index: 1000;
+    }
+    .keyboard-btn:hover {
+      background-color: #555;
+    }
+  </style>
+</head>
+<body>
+  <button class="back" onclick="location.href='board_2.html'">← Back</button>
+  <button class="more" onclick="location.href='basic_needs_2.html'">More →</button>
+
+  <div class="scroll-area">
+    <button class="aac-button" onclick="speak('Water')">
+      <img src="cant_breathe.png" alt="Water">
+      <span>Water</span>
+    </button>
+    <button class="aac-button" onclick="speak('Help Drinking')">
+      <img src="worse.png" alt="Help Drinking">
+      <span>Help Drinking</span>
+    </button>
+    <button class="aac-button" onclick="speak('Food')">
+      <img src="pain.png" alt="Food">
+      <span>Food</span>
+    </button>
+    <button class="aac-button" onclick="speak('Help Eating')">
+      <img src="cartoon-fire.png" alt="Help Eating">
+      <span>Help Eating</span>
+    </button>
+    <button class="aac-button" onclick="speak('Urinal')">
+      <img src="cold.png" alt="Urinal">
+      <span>Urinal</span>
+    </button>
+    <button class="aac-button" onclick="speak('Bed pan')">
+      <img src="sleepy.png" alt="Bed pan">
+      <span>Bed pan</span>
+    </button>
+
+    <button class="keyboard-btn" onclick="location.href='Keyboard.html'">Keyboard</button>
+  </div>
+
+  <script>
+    function speak(text) {
+      const msg = new SpeechSynthesisUtterance(text);
+      window.speechSynthesis.speak(msg);
+    }
+  </script>
+</body>
+</html>
+
