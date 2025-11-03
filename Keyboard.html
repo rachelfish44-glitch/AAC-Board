@@ -88,6 +88,19 @@
       z-index: 10;
     }
 
+    .speak-btn {
+      width: 90%;
+      max-width: 700px;
+      height: clamp(60px, 10vw, 80px);
+      font-size: clamp(20px, 5vw, 28px);
+      margin-top: 20px;
+      background-color: #FF5722;
+    }
+
+    .speak-btn:hover {
+      background-color: #E64A19;
+    }
+
     @media (max-width: 600px) {
       .keyboard-container {
         gap: 5px;
@@ -97,6 +110,10 @@
         max-width: 45px;
         height: 12vw;
         font-size: 4vw;
+      }
+      .speak-btn {
+        height: 14vw;
+        font-size: 5vw;
       }
     }
   </style>
@@ -158,9 +175,10 @@
       <button onclick="addChar('M')">M</button>
       <button onclick="addChar(' ')">Space</button>
       <button onclick="deleteChar()">⌫</button>
-      <button onclick="speakText()">Speak</button>
     </div>
   </div>
+
+  <button class="speak-btn" onclick="speakText()">Speak</button>
 
   <script>
     const display = document.getElementById('display');
@@ -180,3 +198,4 @@
   </script>
 </body>
 </html>
+
