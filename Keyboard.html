@@ -26,6 +26,20 @@
       font-size: clamp(20px, 5vw, 36px);
     }
 
+    #display {
+      width: 90%;
+      max-width: 700px;
+      min-height: 50px;
+      margin-bottom: 20px;
+      padding: 10px;
+      font-size: clamp(16px, 4vw, 28px);
+      background-color: #fff;
+      border: 2px solid #4CAF50;
+      border-radius: 6px;
+      overflow-x: auto;
+      text-align: left;
+    }
+
     .keyboard-container {
       display: flex;
       flex-direction: column;
@@ -42,7 +56,7 @@
     }
 
     button {
-      flex: 1 1 8%; /* flexible sizing */
+      flex: 1 1 8%;
       min-width: 40px;
       max-width: 80px;
       height: clamp(40px, 10vw, 60px);
@@ -91,63 +105,76 @@
   <button class="back" onclick="history.back()">← Back</button>
   <h1>Keyboard</h1>
 
+  <div id="display"></div>
+
   <div class="keyboard-container">
     <!-- Numbers Row -->
     <div class="key-row">
-      <button onclick="speak('1')">1</button>
-      <button onclick="speak('2')">2</button>
-      <button onclick="speak('3')">3</button>
-      <button onclick="speak('4')">4</button>
-      <button onclick="speak('5')">5</button>
-      <button onclick="speak('6')">6</button>
-      <button onclick="speak('7')">7</button>
-      <button onclick="speak('8')">8</button>
-      <button onclick="speak('9')">9</button>
-      <button onclick="speak('0')">0</button>
+      <button onclick="addChar('1')">1</button>
+      <button onclick="addChar('2')">2</button>
+      <button onclick="addChar('3')">3</button>
+      <button onclick="addChar('4')">4</button>
+      <button onclick="addChar('5')">5</button>
+      <button onclick="addChar('6')">6</button>
+      <button onclick="addChar('7')">7</button>
+      <button onclick="addChar('8')">8</button>
+      <button onclick="addChar('9')">9</button>
+      <button onclick="addChar('0')">0</button>
     </div>
 
-    <!-- Letters Row Example -->
+    <!-- Letters Rows -->
     <div class="key-row">
-      <button onclick="speak('Q')">Q</button>
-      <button onclick="speak('W')">W</button>
-      <button onclick="speak('E')">E</button>
-      <button onclick="speak('R')">R</button>
-      <button onclick="speak('T')">T</button>
-      <button onclick="speak('Y')">Y</button>
-      <button onclick="speak('U')">U</button>
-      <button onclick="speak('I')">I</button>
-      <button onclick="speak('O')">O</button>
-      <button onclick="speak('P')">P</button>
-    </div>
-
-    <div class="key-row">
-      <button onclick="speak('A')">A</button>
-      <button onclick="speak('S')">S</button>
-      <button onclick="speak('D')">D</button>
-      <button onclick="speak('F')">F</button>
-      <button onclick="speak('G')">G</button>
-      <button onclick="speak('H')">H</button>
-      <button onclick="speak('J')">J</button>
-      <button onclick="speak('K')">K</button>
-      <button onclick="speak('L')">L</button>
+      <button onclick="addChar('Q')">Q</button>
+      <button onclick="addChar('W')">W</button>
+      <button onclick="addChar('E')">E</button>
+      <button onclick="addChar('R')">R</button>
+      <button onclick="addChar('T')">T</button>
+      <button onclick="addChar('Y')">Y</button>
+      <button onclick="addChar('U')">U</button>
+      <button onclick="addChar('I')">I</button>
+      <button onclick="addChar('O')">O</button>
+      <button onclick="addChar('P')">P</button>
     </div>
 
     <div class="key-row">
-      <button onclick="speak('Z')">Z</button>
-      <button onclick="speak('X')">X</button>
-      <button onclick="speak('C')">C</button>
-      <button onclick="speak('V')">V</button>
-      <button onclick="speak('B')">B</button>
-      <button onclick="speak('N')">N</button>
-      <button onclick="speak('M')">M</button>
-      <button onclick="speak('Space')">Space</button>
-      <button onclick="speak('Enter')">Enter</button>
+      <button onclick="addChar('A')">A</button>
+      <button onclick="addChar('S')">S</button>
+      <button onclick="addChar('D')">D</button>
+      <button onclick="addChar('F')">F</button>
+      <button onclick="addChar('G')">G</button>
+      <button onclick="addChar('H')">H</button>
+      <button onclick="addChar('J')">J</button>
+      <button onclick="addChar('K')">K</button>
+      <button onclick="addChar('L')">L</button>
+    </div>
+
+    <div class="key-row">
+      <button onclick="addChar('Z')">Z</button>
+      <button onclick="addChar('X')">X</button>
+      <button onclick="addChar('C')">C</button>
+      <button onclick="addChar('V')">V</button>
+      <button onclick="addChar('B')">B</button>
+      <button onclick="addChar('N')">N</button>
+      <button onclick="addChar('M')">M</button>
+      <button onclick="addChar(' ')">Space</button>
+      <button onclick="deleteChar()">⌫</button>
+      <button onclick="speakText()">Speak</button>
     </div>
   </div>
 
   <script>
-    function speak(text) {
-      const msg = new SpeechSynthesisUtterance(text);
+    const display = document.getElementById('display');
+
+    function addChar(char) {
+      display.textContent += char;
+    }
+
+    function deleteChar() {
+      display.textContent = display.textContent.slice(0, -1);
+    }
+
+    function speakText() {
+      const msg = new SpeechSynthesisUtterance(display.textContent);
       window.speechSynthesis.speak(msg);
     }
   </script>
