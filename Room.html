@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Room/Enviroment</title>
+  <title>Room/Environment (1)</title>
   <style>
     body {
       display: flex;
@@ -34,116 +34,92 @@
       border: none;
       border-radius: 10px;
       cursor: pointer;
-      }
-	.back {
+    }
+    .back, .more {
       position: fixed;
       top: 2px;
-      left: 20px;
       background-color: #333;
       color: white;
-      width: 100px;          /* set button width */
-      height: 100px;         /* set button height */
-      font-size: 20px;      /* smaller text */
+      width: 100px;
+      height: 100px;
+      font-size: 20px;
       border: none;
       border-radius: 6px;
       cursor: pointer;
-	}
-.aac-button {
-  width: 150px;
-  height: 150px;
-  margin: 10px;
-  font-size: 22px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end; /* text goes to bottom */
-  align-items: center;
-  border: none;
-  border-radius: 10px;
-  overflow: hidden;
-  background-color: #f1f1f1;
-  cursor: pointer;
-}
-
-.aac-button img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-
-.aac-button span {
-  background: rgba(0, 0, 0, 0.5);
-  color: white;
-  width: 100%;
-  text-align: center;
-  padding: 4px 0;
-  font-size: 20px;
-}
-.keyboard-btn {
-  position: fixed;
-  bottom: 2px;          /* distance from bottom of screen */
-  left: 50%;
-  transform: translateX(-50%); /* center horizontally */
-  background-color: #333;
-  color: white;
-  padding: 8px 40px;
-  width: 200px;          /* set button width */
-  height: 100px;         /* set button height */
-  font-size: 20px;      /* smaller text */
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  z-index: 1000;         /* make sure it’s above other content */
-}
-.keyboard-btn:hover {
-  background-color: #555;
-}
+      z-index: 1000;
+    }
+    .back { left: 20px; }
+    .more { right: 20px; }
+    .aac-button {
+      width: 150px;
+      height: 150px;
+      margin: 10px;
+      font-size: 22px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: center;
+      border: none;
+      border-radius: 10px;
+      overflow: hidden;
+      background-color: #f1f1f1;
+      cursor: pointer;
+    }
+    .aac-button img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+    .aac-button span {
+      background: rgba(0,0,0,0.5);
+      color: white;
+      width: 100%;
+      text-align: center;
+      padding: 4px 0;
+      font-size: 20px;
+    }
+    .keyboard-btn {
+      position: fixed;
+      bottom: 2px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #333;
+      color: white;
+      padding: 8px 40px;
+      width: 200px;
+      height: 100px;
+      font-size: 20px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      z-index: 1000;
+    }
+    .keyboard-btn:hover { background-color: #555; }
   </style>
 </head>
 <body>
   <button class="back" onclick="location.href='board_2.html'">← Back</button>
-<div class="scroll-area">
-  <button class="aac-button" onclick="speak('Call Light')">
-    <img src="cant_breathe.png" alt="Call Light">
-    <span>Call Light</span>
-  </button>
-  <button class="aac-button" onclick="speak('TV')">
-    <img src="worse.png" alt="TV">
-    <span>TV</span>
-  </button>
-  <button class="aac-button" onclick="speak('Call Someone')">
-    <img src="pain.png" alt="Call Someone">
-    <span>Call Someone</span>
-  </button>
-  <button class="aac-button" onclick="speak('Quiet')">
-    <img src="cartoon-fire.png" alt="Quiet">
-    <span>Quiet</span>
-  </button>
-  <button class="aac-button" onclick="speak('Lights On')">
-    <img src="cold.png" alt="Exercise">
-    <span>Lights On</span>
-  </button>
-  <button class="aac-button" onclick="speak('Lights Off')">
-    <img src="sleepy.png" alt="Roll Right">
-    <span>Lights Off</span>
-  </button>
-  <button class="aac-button" onclick="speak('Temp Down')">
-    <img src="cold.png" alt="Exercise">
-    <span>Temp Down</span>
-  </button>
-  <button class="aac-button" onclick="speak('Temp Up')">
-    <img src="sleepy.png" alt="Roll Right">
-    <span>Temp Up</span>
-  </button>
-  <button class="aac-button" onclick="speak('Curtains Open')">
-    <img src="cold.png" alt="Exercise">
-    <span>Curtains Open</span>
-  </button>
-  <button class="aac-button" onclick="speak('Curtains Closed')">
-    <img src="sleepy.png" alt="Roll Right">
-    <span>Curtains Closed</span>
-  </button>
-  	<button class="keyboard-btn" onclick="location.href='Keyboard.html'">Keyboard</button>
-</div>
+  <button class="more" onclick="location.href='room_environment_2.html'">More →</button>
+
+  <div class="scroll-area">
+    <button class="aac-button" onclick="speak('Call Light')">
+      <img src="cant_breathe.png" alt="Call Light"><span>Call Light</span>
+    </button>
+    <button class="aac-button" onclick="speak('TV')">
+      <img src="worse.png" alt="TV"><span>TV</span>
+    </button>
+    <button class="aac-button" onclick="speak('Call Someone')">
+      <img src="pain.png" alt="Call Someone"><span>Call Someone</span>
+    </button>
+    <button class="aac-button" onclick="speak('Quiet')">
+      <img src="cartoon-fire.png" alt="Quiet"><span>Quiet</span>
+    </button>
+    <button class="aac-button" onclick="speak('Lights On')">
+      <img src="cold.png" alt="Lights On"><span>Lights On</span>
+    </button>
+
+    <button class="keyboard-btn" onclick="location.href='Keyboard.html'">Keyboard</button>
+  </div>
 
   <script>
     function speak(text) {
@@ -152,5 +128,4 @@
     }
   </script>
 </body>
-
 </html>
